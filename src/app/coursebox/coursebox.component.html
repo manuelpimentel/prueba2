@@ -1,0 +1,6 @@
+<div class="course" >
+    <img style="width: 100px; height: 100px;" [src]="course.image" >
+    <h2>{{course.name}}</h2>
+    <span class="price">{{course.price | currency : 'USD': true :'1.2-2'}}</span>
+    <button (click)="add(course)" >Agregar al carrito</button>
+</div>

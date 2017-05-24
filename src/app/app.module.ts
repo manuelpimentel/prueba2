@@ -5,11 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
+import { CourseboxComponent } from './coursebox/coursebox.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent
+    CoursesComponent,
+    CourseboxComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

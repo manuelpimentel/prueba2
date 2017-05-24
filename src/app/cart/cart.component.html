@@ -1,0 +1,18 @@
+<div class="cart">
+  <h2>Carrito</h2>  
+  <span>{{details.items}} articulos agregados</span>
+
+  <div *ngFor="let key of keys()" class="detail">
+      {{courses[key].name}}
+      {{courses[key].price | currency : 'USD' : true : '1.2-2'}}
+      x
+      {{courses[key].quantity}}      
+      <span class="total">
+        {{ (courses[key].quantity * courses[key].price ) | currency : 'USD' : true : '1.2-2' }}
+      </span>
+  </div>
+
+  <span class="total">
+    {{details.total | currency : 'USD' : true : '1.2-2' }}
+  </span>
+</div>
