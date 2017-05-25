@@ -1,36 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import {Course} from '../common/course';
-
-const COURSES : Course[] = [
-  {
-    id : 1,
-    name : 'Angular 2',
-    image : 'https://cdn.worldvectorlogo.com/logos/angular-icon.svg',
-    price: 100
-  },
-  {
-    id : 2,
-    name : 'Python',
-    image : 'https://www.python.org/static/opengraph-icon-200x200.png',
-    price: 120
-  },
-
-
-]
+import { ApiService } from "../api.service";
 
 @Component({
   selector: 'courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.css']
+  styleUrls: ['./courses.component.css'],
+  providers:[ApiService]
 })
 export class CoursesComponent implements OnInit {
 
   title : string = "Cursos disponibles";
-  courses : Course[] = COURSES;
+  courses : Course[];
   
-  constructor() { }
+  constructor(private ApiService: ApiService) {
+
+   }
+
+   /*getCourses(){
+     this.ApiService.getCourses().then(
+       courses => this.courses = courses
+     )
+   }*/
 
   ngOnInit() {
+   // this.getCourses();
   }
 
 }

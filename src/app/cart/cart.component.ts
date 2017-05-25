@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service'
+import {ApiService} from '../api.service';
 
 @Component({
   selector: 'cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent  {
   courses: any;
   details: any;
 
@@ -14,11 +15,15 @@ export class CartComponent implements OnInit {
     return Object.keys(this.courses);
   }
   
-  constructor( private CartService : CartService) { }
+  constructor( private ApiService : ApiService) { 
 
-  ngOnInit() {
-    this.courses = this.CartService.getCourses();
-    this.details = this.CartService.getDetail();
+    this.ApiService.getCourses().subscribe((res:any)=>{
+      console.log(res);
+    },(err)=>{
+        console.log(err);
+    });
+    
   }
+
 
 }

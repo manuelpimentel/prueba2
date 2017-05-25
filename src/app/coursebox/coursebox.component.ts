@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Course} from '../common/course'
-import { CartService } from '../cart.service'
+import { OportunityService } from '../oportunity.service'
 
 @Component({
   selector: 'coursebox',
@@ -11,11 +11,13 @@ export class CourseboxComponent implements OnInit {
   @Input()
   course: Course;
 
-  constructor( private CartService : CartService) 
+  constructor( private OportunityService : OportunityService) 
   { }
 
-  add(course : Course){
-    this.CartService.addToCart(course);
+  add(){
+    this.OportunityService.makeGet().subscribe((res:any)=>{
+      console.log(res);
+    });
   }
 
   ngOnInit() {

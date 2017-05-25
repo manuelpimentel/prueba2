@@ -1,0 +1,14 @@
+[
+  {
+    "id" : 1,
+    "name" : "Angular 2",
+    "image" : "https://cdn.worldvectorlogo.com/logos/angular-icon.svg",
+    "price": 100
+  },
+  {
+    "id" : 2,
+    "name" : "Python",
+    "image" : "https://www.python.org/static/opengraph-icon-200x200.png",
+    "price": 120
+  }
+]
