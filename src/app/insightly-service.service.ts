@@ -39,14 +39,13 @@ export class InsightlyService{
   }
   
   getRequest(url:string):Observable<Response>{
-      console.log(this.commonOptions.headers.values);
-      return null;
-    /*return this.http.get(this.BaseUrl+url,this.commonOptions)
+    let endPoint:string = this.BaseUrl+url;    
+    return this.http.get("https://api.darksky.net/forecast/255dc2ec7135e38274198b2e01e0a265/37.8267,-122.4233",null)
     .map((res:Response)=>{
         return res.json();
     },(err)=>{
         return err.json();
-    });*/
+    });
 
   }
 

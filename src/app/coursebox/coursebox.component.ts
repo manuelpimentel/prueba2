@@ -10,13 +10,15 @@ import { OportunityService } from '../oportunity.service'
 export class CourseboxComponent implements OnInit {
   @Input()
   course: Course;
+  latitude:any;
+  altitude:any;
 
   constructor( private OportunityService : OportunityService) 
   { }
 
-  add(){
-    this.OportunityService.makeGet().subscribe((res:any)=>{
-      console.log(res);
+  showLatitude(){
+    this.OportunityService.makeGet().subscribe((res:any)=>{        
+      this.latitude = res.latitude;      
     });
   }
 
